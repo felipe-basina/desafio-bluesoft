@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adicionar Pedido | Desafio Bluesoft</title>
+</head>
+<body>
+    <h3>Adicionar Pedido</h3>
+    <hr />
+
+    <form ng-submit="vm.salvarPedido()">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Quantidade</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="produto in vm.produtos">
+                    <td>{{produto.nome}}</td>
+                    <td><input ng-model="produto.quantidade" ng-init="produto.quantidade = 0"  type="number" min="0" required /></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button type="submit" class="btn btn-primary pull-right">Enviar</button>
+    </form>
+</body>
+</html>
